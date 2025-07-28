@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  anyjob-admin:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    container_name: anyjob-admin-frontend
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    # Uncomment if you need to connect to a backend API
+    # networks:
+    #   - app-network
+
+# Uncomment if you need to connect to a backend API
+# networks:
+#   app-network:
+#     driver: bridge 
