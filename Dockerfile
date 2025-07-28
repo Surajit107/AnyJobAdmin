@@ -9,8 +9,11 @@ WORKDIR /app
 COPY package*.json ./
 COPY yarn.lock ./
 
-# Install dependencies
-RUN npm ci --only=production --silent
+# Install dependencies (including dev dependencies for build)
+RUN npm ci --silent
+
+# Update browserslist database to avoid warnings
+RUN npx update-browserslist-db@latest
 
 # Copy source code
 COPY . .

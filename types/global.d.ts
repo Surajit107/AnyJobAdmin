@@ -1,7 +1,29 @@
-declare module 'datatables.net-bs5';
-declare module 'datatables.net-responsive';
-declare module 'datatables.net-responsive-bs5';
-declare module 'datatables.net-buttons-bs5';
-declare module 'datatables.net-fixedheader-bs5';
-declare module 'datatables.net-fixedcolumns-bs5';
-declare module 'datatables.net-select-bs5';
+// Global type declarations for third-party libraries
+
+declare global {
+  interface Window {
+    bootstrap: {
+      Modal: {
+        new (element: Element | string, options?: any): {
+          show(): void;
+          hide(): void;
+          dispose(): void;
+        };
+      };
+      Popover: {
+        new (element: Element | string, options?: any): any;
+      };
+      Tooltip: {
+        new (element: Element | string, options?: any): any;
+      };
+      Offcanvas: {
+        new (element: Element | string, options?: any): any;
+      };
+      Toast: {
+        new (element: Element | string, options?: any): any;
+      };
+    };
+  }
+}
+
+export {};

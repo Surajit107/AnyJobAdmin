@@ -27,5 +27,8 @@
   "include": [
     "src",
     "types" // Include your types folder
+  ],
+  "files": [
+    "types/global.d.ts"
   ]
 }
